@@ -1,0 +1,15 @@
+<h3>Edit Your Goals</h3>
+
+<%= form_for @usergoal do |f| %>
+    <%= f.label("Name:") %>
+    <%= f.text_field :goal %>
+    <br>
+    <%= f.label("Description:") %>
+    <%= f.text_field :description %>
+    <br>
+    <%= f.label("Goal Date:") %>
+    <%= f.text_field :goal_date %>
+    <br>
+    
+    <%= f.submit "Edit Complete" %>
+<% end %>

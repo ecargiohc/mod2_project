@@ -1,0 +1,17 @@
+<% puts @current_user %>
+<h1>Hi <%= @current_user.name %> :)</h1>
+
+<h4>
+Here are your list of goals:
+</h4>
+<%= link_to "my goals", user_goals_path(@current_user) %>
+
+<h4>
+Explore other goals:
+</h4>
+<%= link_to "all goals", goals_path %>
+
+<h4>
+See your friends' goals:
+</h4>
+<%= link_to "their goals", user_goals_path %>

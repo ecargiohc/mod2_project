@@ -1,5 +1,9 @@
-<h1>View Your Friends Achievements</h1>
+<h1>View Your Friends Pending Goals</h1>
 
 <% @usergoals.each do |usergoal| %>
-    <li><%= link_to usergoal.user.name, achievement_path(usergoal.user)%><br/></li>
+    <div><li><%= usergoal.user.name %></li>
+    <ul><%= usergoal.description %> 
+    <ul><%= link_to "read on their progress", log_path(usergoal.user) %></div><br>
 <% end %>
+
+<% #link_to usergoal.user.name, user_goals_path(usergoal)%>

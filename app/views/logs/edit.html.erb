@@ -1,0 +1,13 @@
+<h2>Update Your Log</h2>
+
+<%= form_for @log do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <br>
+    <%= f.label :entry %>
+    <%= f.text_field :entry %>
+    <br><br>
+    <%= f.submit "update"%>
+    <br><br>
+    <%= link_to "delete log?", @log, method: :delete, data: { confirm: "delete?" } %>
+    <% end %>

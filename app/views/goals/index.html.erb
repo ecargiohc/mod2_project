@@ -1,7 +1,10 @@
-<h3> Goal Categories </h3>
+<h3> Explore Categories: </h3>
+<ul>click to explore</ul>
+<br>
 <% @goals.each do |goal| %>
     <li>
-    <%= goal.category%><br/>
+    <%= link_to goal.category, goal.link%>
+    <br><br>
     </li>
 <% end %>
 

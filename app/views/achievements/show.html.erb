@@ -1,3 +1,7 @@
-<h3>View his/her Achievement</h3>
-<%= @achievement.user_goal.user.name %>
+<h3>View <%= @achievement.user_goal.user.name %>'s Achievement(s):</h3>
+
+<li>
+<%= @achievement.user_goal.description %><br/>
 <% # link_to @achievement.user_goal, @achievement_path(user_goal) %>
+
+</li>

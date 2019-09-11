@@ -8,6 +8,6 @@ class AchievementsController < ApplicationController
     end
 
     def show
-        @achievement = Achievement.find(params[:id])
+        @achievement = Achievement.find_by(params[:id])
     end
 end

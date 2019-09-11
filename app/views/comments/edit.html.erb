@@ -1,0 +1,14 @@
+<h2>Edit Your Comment</h2>
+
+<%= form_for @comment do |f| %>
+    <%= f.label ("Log Title:") %>
+    <%= f.text_field :title %>
+    <br><br>
+    <%= f.label ("Your Words:") %>
+    <%= f.text_field :entry %>
+    <br><br>
+    <%= f.submit ("Complete Edit")%>
+    <br><br>
+    <%= link_to "delete?", @comment, method: :delete, data: { confirm: "Are you sure?" } %>
+    <% end %>
+    

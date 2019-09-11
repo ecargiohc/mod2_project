@@ -1,0 +1,11 @@
+<h2>Write an Entry on Your Progress</h2>
+
+<%= form_for @log do |f| %>
+    <%= f.label "Title Your Log:" %>
+    <%= f.text_field :title %>
+    <br>
+    <%= f.label "Write:" %>
+    <%= f.text_field :entry %>
+    <br><br>
+    <%= f.submit "Add Log"%>
+    <% end %>

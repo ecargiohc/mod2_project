@@ -1,0 +1,12 @@
+<h3>All Entries</h3>
+
+<% @logs.each do |log| %>
+    
+    <li>
+    <%= link_to log.title, log_path(log) %> 
+    <li>
+    <%= log.date %>
+    <li>
+    <%= log.entry %>
+    </li>
+<% end %>

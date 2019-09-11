@@ -1,16 +1,22 @@
-<h3>Create Your Goal(s)</h3>
+<h3>Create A Goal</h3>
 
 <%= form_for @usergoal do |f| %>
-    <%= f.label("Name:") %>
-    <%= f.text_field :goal %>
-    <br>
+    <% #f.label("Re-enter Your Name:") %>
+    <% #number_field :user_id %>
+
+    <%= f.label("Goal Category:") %>
+    <%= collection_select(:user_goal, :goal_id, Goal.all, :id, :category, prompt: true) %>
+    <br><br>
     <%= f.label("Describe it:") %>
     <%= f.text_field :description %>
-    <br>
+    <br><br>
+    <%= f.label("Start Date:") %>
+    <%= f.text_field :start_date %>
+    <br><br>
     <%= f.label("Goal Date:") %>
     <%= f.text_field :goal_date %>
     <br>
-    
-    <%= f.submit "Do it!" %>
+    <br>
+    <%= f.submit "Create!" %>
 <% end %>
     

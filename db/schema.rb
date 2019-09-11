@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_10_210923) do
+ActiveRecord::Schema.define(version: 2019_09_11_180608) do
 
   create_table "achievements", force: :cascade do |t|
     t.integer "user_goal_id"
@@ -19,8 +19,27 @@ ActiveRecord::Schema.define(version: 2019_09_10_210923) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "comments", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "log_id"
+    t.string "title"
+    t.text "entry"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "goals", force: :cascade do |t|
     t.string "category"
+    t.string "link"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "logs", force: :cascade do |t|
+    t.integer "user_goal_id"
+    t.string "title"
+    t.text "entry"
+    t.string "date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -29,6 +48,7 @@ ActiveRecord::Schema.define(version: 2019_09_10_210923) do
     t.integer "user_id"
     t.integer "goal_id"
     t.string "description"
+    t.string "start_date"
     t.string "goal_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

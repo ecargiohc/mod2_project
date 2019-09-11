@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :comments
+  resources :logs
   resources :achievements
   resources :user_goals
   resources :goals

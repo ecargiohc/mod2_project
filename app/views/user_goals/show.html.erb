@@ -1,3 +1,17 @@
-<h3>See Goal(s)</h3>
+<h3>Mah Goal(s)</h3>
 
-   
+<h4><%= @usergoal.goal.category %>:</h4>
+<li>
+<%= @usergoal.description %>
+<ul>
+<label>Start Date:</label> <%= @usergoal.start_date %>
+<ul>
+<label>Goal Date:</label> <%= @usergoal.goal_date %></ul>
+
+<br><br>
+<div>
+<%= link_to "Edit My List of Goals", edit_user_goal_path(@usergoal.goal) %>
+</div>
+<div>
+<%= link_to "Return Home", users_path %>
+</div>

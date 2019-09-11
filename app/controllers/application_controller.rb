@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
     end
 
     def authenticate(username, password)
-        @user = User.new
+        # @user = User.new
         @user = User.find_by(username: username, password: password)
         puts @user
         if @user != nil

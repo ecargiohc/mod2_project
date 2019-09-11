@@ -4,6 +4,7 @@ class CreateUserGoals < ActiveRecord::Migration[6.0]
       t.integer :user_id
       t.integer :goal_id
       t.string :description
+      t.string :start_date
       t.string :goal_date
 
       t.timestamps

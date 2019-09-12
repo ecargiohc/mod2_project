@@ -13,8 +13,10 @@ class UserGoalsController < ApplicationController
     end
 
     def show
-        @all_users_goals = UserGoal.find_each
-        @usergoal = UserGoal.find_by(params[:id])
+        #byebug
+        # @all_users_goals = UserGoal.find_each
+        
+        @all_my_usergoals = UserGoal.where(user_id: params[:id])
         # @foundUserGoals = @foundUser.goals
         
         #@usergoal = UserGoal.find(params[:id]) sometimes this works, sometimes the other 'find_by' works :// ?!!??!! 
@@ -47,7 +49,7 @@ class UserGoalsController < ApplicationController
 
     def destroy 
         # byebug
-        @usergoal = UserGoal.find_by(params[:id])
+        @usergoal = UserGoal.find_by(user_id: params[:id])
         @usergoal.destroy
         # flash[:notice] = "Goal deleted."
         redirect_to user_goal_path #beware of plural or singular, depending on if want to view all or specific!!!

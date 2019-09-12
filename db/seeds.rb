@@ -53,19 +53,19 @@ ug6 = UserGoal.create({user: jpark, goal: fitness, description: "lift heavier we
 
 a1 = Achievement.create({user_goal: ug1, report: "it was rewarding"})
 
-m1 = Motto.create({phrase: "phrase1"})
-m2 = Motto.create({phrase: "phrase2"})
-m3 = Motto.create({phrase: "phrase3"})
+# m1 = Motto.create({phrase: "phrase1"})
+# m2 = Motto.create({phrase: "phrase2"})
+# m3 = Motto.create({phrase: "phrase3"})
 
-# 10.times do
-#     motto = Motto.create({
-#       phrase: Faker::Quote.yoda
-#     })
-# end
+10.times do
+    motto = Motto.create({
+      phrase: Faker::Quote.yoda
+    })
+end
 
-log1 = Log.create({user: genevieve, motto: m1, title: "blahhh", entry: "tired and excessively hungry", date: "12/09/2019"})
-log2 = Log.create({user: catherine, motto: m2, title: "blah2", entry: "log2", date: "12/02/2029"})
-log3 = Log.create({user: jared, motto: m3, title: "blahhh3", entry: "log3", date: "12/02/2010"})
+# log1 = Log.create({user: genevieve, motto: motto, title: "blahhh", entry: "tired and excessively hungry", date: "12/09/2019"})
+# log2 = Log.create({user: catherine, motto: motto, title: "blah2", entry: "log2", date: "12/02/2029"})
+# log3 = Log.create({user: jared, motto: motto, title: "blahhh3", entry: "log3", date: "12/02/2010"})
 
 
 

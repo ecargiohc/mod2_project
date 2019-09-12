@@ -3,10 +3,8 @@
 <% @logs.each do |log| %>
     
     <li>
-    <%= link_to log.title, log_path(log) %> 
-    <ul>
-    <%= log.date %>
-    <%= log.entry %>
-    </ul>
+
+    <%= link_to log.title, log_path(log) %>  
+    <br><br>
     </li>
 <% end %>

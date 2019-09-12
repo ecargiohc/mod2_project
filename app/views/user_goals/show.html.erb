@@ -1,28 +1,16 @@
 <h3>Mah Goal(s)</h3>
 
-<% #byebug %>
-<% @usergoal.user.goals.each do |goal| %>
-    <%= goal.category %>
-    <% end %>
+<%= link_to "Return Home", users_path %><br><br>
+<%= link_to "Add New Goal", new_user_goal_path %><br><br>
+<%= link_to "Record Your Progress", new_log_path %><br><br>
 
+<% @all_users_goals.each do |usergoal| %>
+    <li>Category: <%= usergoal.goal.category %><br><br>
+    Start Date: <%= usergoal.start_date %><br><br>
+    Goal Date: <%= usergoal.goal_date %><br><br>
+    Description: <%= usergoal.description %> <%= link_to "Delete?", :user_goal, method: :delete, data: { confirm: "Really?" } %><br><br></li>
+    <% # link_to "Delete?", :user_goal, method: :delete, data: { confirm: "Really?" } %>
+<% end %>
 
-
-
-<h4><%= @usergoal.goal.category %>:</h4>
-<li>
-<%= @usergoal.description %>
-<ul>
-<label>Start Date:</label> <%= @usergoal.start_date %>
-<ul>
-<label>Goal Date:</label> <%= @usergoal.goal_date %></ul>
 
 <br><br>
-<div>
-<%= link_to "Record Your Progress", new_log_path %>
-</div>
-<div>
-<%= link_to "Edit My List of Goals", edit_user_goal_path(@usergoal.goal) %>
-</div>
-<div>
-<%= link_to "Return Home", users_path %>
-</div>

@@ -2,7 +2,7 @@
 <%= link_to "Return Home", users_path %>
 <br><br>
 <% @usergoals.each do |usergoal| %>
-    <div><li><%= usergoal.user.name %></li>
+    <div><li><%= usergoal.user.name %> wants to:</li>
     <ul><%= usergoal.description %> 
     <ul><%= link_to "read on their progress", log_path(usergoal.user) %></div><br>
 <% end %>

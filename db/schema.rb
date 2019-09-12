@@ -19,15 +19,6 @@ ActiveRecord::Schema.define(version: 2019_09_11_180608) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "comments", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "log_id"
-    t.string "title"
-    t.text "entry"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "goals", force: :cascade do |t|
     t.string "category"
     t.string "link"
@@ -36,11 +27,17 @@ ActiveRecord::Schema.define(version: 2019_09_11_180608) do
   end
 
   create_table "logs", force: :cascade do |t|
-    t.integer "user_goal_id"
+    t.integer "motto_id"
     t.integer "user_id"
     t.string "title"
     t.text "entry"
     t.string "date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "mottos", force: :cascade do |t|
+    t.string "phrase"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

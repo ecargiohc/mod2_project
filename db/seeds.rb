@@ -12,6 +12,11 @@
 User.destroy_all
 Goal.destroy_all
 UserGoal.destroy_all
+Motto.destroy_all
+Achievement.destroy_all
+Log.destroy_all
+
+# log1 = Log.create({user: genevieve, comment: c1, title: "blahhh", entry: "tired and excessively hungry", date: "12/09/2019"})
 
 genevieve = User.create(name: "Genevieve", username: "gen", password: "aa")
 catherine = User.create(name: "Catherine", username: "cat", password: "aa")
@@ -48,9 +53,21 @@ ug6 = UserGoal.create({user: jpark, goal: fitness, description: "lift heavier we
 
 a1 = Achievement.create({user_goal: ug1, report: "it was rewarding"})
 
-log1 = Log.create({user: genevieve, user_goal: ug1, title: "blahhh", entry: "tired and excessively hungry", date: "12/09/2019"})
+m1 = Motto.create({phrase: "phrase1"})
+m2 = Motto.create({phrase: "phrase2"})
+m3 = Motto.create({phrase: "phrase3"})
 
-c1 = Comment.create({user: genevieve, log: log1, title: "you can do it", entry: "why not drink more water"})
+# 10.times do
+#     motto = Motto.create({
+#       phrase: Faker::Quote.yoda
+#     })
+# end
+
+log1 = Log.create({user: genevieve, motto: m1, title: "blahhh", entry: "tired and excessively hungry", date: "12/09/2019"})
+log2 = Log.create({user: catherine, motto: m2, title: "blah2", entry: "log2", date: "12/02/2029"})
+log3 = Log.create({user: jared, motto: m3, title: "blahhh3", entry: "log3", date: "12/02/2010"})
+
+
 
 # UserStory.create(user: genevieve, usergoal, entry: "asdlfj", motto: "just fifteen minutes every day")
 # UserStory.create(user: catherine, usergoal, entry: "zwqieoru", motto: "zmnxvc")

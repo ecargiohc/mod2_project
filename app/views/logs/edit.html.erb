@@ -7,7 +7,10 @@
     <%= f.label :entry %>
     <%= f.text_field :entry %>
     <br><br>
-    <%= f.submit "update"%>
+    <%= f.submit "save update"%>
+    <br><br>
+    <%= f.label "choose a motto:" %>
+    <%= collection_select(:log, :motto_id, Motto.all, :id, :phrase, prompt: true) %>
     <br><br>
     <%= link_to "delete log?", @log, method: :delete, data: { confirm: "delete?" } %>
     <% end %>

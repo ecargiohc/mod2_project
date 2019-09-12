@@ -1,7 +1,13 @@
-<h3>Read Log: "<%= @log.title %>"</h3>
+<h3>Your Logs:</h3>
 
-<%= @log.date %>
+<%= link_to "Return Home", users_path %>
 <br><br>
-<%= @log.entry %>
+<%= link_to "Add Log", new_log_path %>
 <br><br>
-<%= link_to "Comment or Give Advice?", new_comment_path %>
+<% @user_logs.each do |log| %>
+    <li>On: <%= log.date %><br><br>
+    Title: "<%= log.title %>"<br><br>
+    Description: <%= log.entry %><br><br>
+    Motto: "<%= log.motto.phrase %>"<br><br></li>
+    <%= link_to "Delete?", :log, method: :delete, data: { confirm: "Really?" } %><br><br>
+<% end %>

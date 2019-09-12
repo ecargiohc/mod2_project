@@ -10,5 +10,8 @@
     <%= f.label "Write:" %>
     <%= f.text_field :entry %>
     <br><br>
+    <%= f.label "choose a motto:" %>
+    <%= collection_select(:log, :motto_id, Motto.all, :id, :phrase, prompt: true) %>
+    <br><br>
     <%= f.submit "Add Log" %>
 <% end %>

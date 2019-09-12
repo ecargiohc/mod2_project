@@ -1,6 +1,8 @@
 
 <h1>Hi <%= @current_user.name %> :)</h1>
 
+<%= link_to "logout", {:controller=> "logins", :action=> "destroy"}, :method => :delete %>
+<div class="wrapper">
 <h4>
 Here are your list of goals:
 </h4>
@@ -17,6 +19,11 @@ Create a new goal:
 <%= link_to "create", new_user_goal_path %>
 
 <h4>
+Record your progress:
+</h4>
+<%= link_to "log", new_log_path %>
+
+<h4>
 Read journey on others' progress:
 </h4>
 <%= link_to "logs", logs_path %>
@@ -26,7 +33,4 @@ See your friends' goals:
 </h4>
 <%= link_to "their goals", user_goals_path %>
 
-<h4>
-See all achieved goals:
-</h4>
-<%= link_to "achievements", achievements_path %>
+</div>

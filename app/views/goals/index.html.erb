@@ -3,10 +3,11 @@
 <br><br>
 <ul>*click to explore*</ul>
 <br>
-<% @goals.each do |goal| %>
+<div><% @goals.each do |goal| %>
     <li>
     <%= link_to goal.category, goal.link%>
     <br><br>
     </li>
 <% end %>
 
+</div>

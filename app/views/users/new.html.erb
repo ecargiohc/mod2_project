@@ -1,14 +1,15 @@
 <%= form_for(@user) do |f| %>
     <%= f.label("Name") %>
-    <%= f.text_field :name %><br/>
-
+    <%= f.text_field :name %>
+    <br><br>
     <%= f.label("Username") %>
-    <%= f.text_field :username %><br/>
-
+    <%= f.text_field :username %>
+    <br><br>
     <%= f.label("Password") %>
-    <%= f.password_field :password %><br/>
-
+    <%= f.password_field :password %>
+    <br><br>
     <%= f.submit("Create Account")%>
     
+    <%= link_to "Have an account?", root_path %>
     
 <% end %>

@@ -1,5 +1,7 @@
 <h2>Write an Entry on Your Progress</h2>
 
+<%= link_to "Return Home", users_path %><br><br>
+
 <%= form_for @log do |f| %>
     <%= f.label "Title Your Log:" %>
     <%= f.text_field :title %>
@@ -8,7 +10,7 @@
     <%= f.text_field :date %>
     <br><br>
     <%= f.label "Write:" %>
-    <%= f.text_field :entry %>
+    <%= f.text_area :entry %>
     <br><br>
     <%= f.label "choose a motto:" %>
     <%= collection_select(:log, :motto_id, Motto.all, :id, :phrase, prompt: true) %>

@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
     protect_from_forgery with: :exception
+    
     before_action :current_user
 
     def log_in(user)
@@ -23,5 +24,10 @@ class ApplicationController < ActionController::Base
         else
             nil
         end
+    end
+
+    def log_out
+        session.delete(:user_id)
+        # @current_user = nil
     end
 end

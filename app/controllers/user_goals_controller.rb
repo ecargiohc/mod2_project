@@ -15,10 +15,7 @@ class UserGoalsController < ApplicationController
     def show
         #byebug
         # @all_users_goals = UserGoal.find_each
-        
         @all_my_usergoals = UserGoal.where(user_id: params[:id])
-        # @foundUserGoals = @foundUser.goals
-        
         #@usergoal = UserGoal.find(params[:id]) sometimes this works, sometimes the other 'find_by' works :// ?!!??!! 
     end
     
@@ -30,13 +27,6 @@ class UserGoalsController < ApplicationController
             goal_date: params["user_goal"][:goal_date], 
             description: params["user_goal"][:description]
         )
-        # @usergoal = UserGoal.create(user: params[:user_id],
-        #                 goal: params[:goal_id], 
-        #                 start_date: params[:start_date],
-        #                 goal_date: params[:goal_date],
-        #                 description: params[:description])
-
-        # byebug
         redirect_to user_goal_path(@usergoal)
         # redirect_to user_goal_path(@usergoal.id)
     end

@@ -9,5 +9,6 @@
     Title: "<%= log.title %>"<br><br>
     Description: <%= log.entry %><br><br>
     Motto: "<%= log.motto.phrase %>"<br><br></li>
+    <%= link_to "Edit this?", edit_log_path(log) %><br><br>
     <%= link_to "Delete?", :log, method: :delete, data: { confirm: "Really?" } %><br><br>
 <% end %>

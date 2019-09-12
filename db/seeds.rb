@@ -13,7 +13,6 @@ User.destroy_all
 Goal.destroy_all
 UserGoal.destroy_all
 Motto.destroy_all
-Achievement.destroy_all
 Log.destroy_all
 
 # log1 = Log.create({user: genevieve, comment: c1, title: "blahhh", entry: "tired and excessively hungry", date: "12/09/2019"})
@@ -51,13 +50,12 @@ ug4 = UserGoal.create({user: asif, goal: skill, description: "learn a new langua
 ug5 = UserGoal.create({user: joseph, goal: skill, description: "learn to play the piccolo", start_date: "10/31/2019", goal_date: "09/09/2000"})
 ug6 = UserGoal.create({user: jpark, goal: fitness, description: "lift heavier weights", start_date: "10/31/2019", goal_date: "11/11/2019"})
 
-a1 = Achievement.create({user_goal: ug1, report: "it was rewarding"})
 
 # m1 = Motto.create({phrase: "phrase1"})
 # m2 = Motto.create({phrase: "phrase2"})
 # m3 = Motto.create({phrase: "phrase3"})
 
-10.times do
+30.times do
     motto = Motto.create({
       phrase: Faker::Quote.yoda
     })
@@ -66,18 +64,5 @@ end
 # log1 = Log.create({user: genevieve, motto: motto, title: "blahhh", entry: "tired and excessively hungry", date: "12/09/2019"})
 # log2 = Log.create({user: catherine, motto: motto, title: "blah2", entry: "log2", date: "12/02/2029"})
 # log3 = Log.create({user: jared, motto: motto, title: "blahhh3", entry: "log3", date: "12/02/2010"})
-
-
-
-# UserStory.create(user: genevieve, usergoal, entry: "asdlfj", motto: "just fifteen minutes every day")
-# UserStory.create(user: catherine, usergoal, entry: "zwqieoru", motto: "zmnxvc")
-# UserStory.create(user: jared, usergoal, entry: "xzvniep", motto: "qweiopruwqe")
-# UserStory.create(user: asif, usergoal entry: "qwropifsd", motto: "pqoweiru")
-# UserStory.create(user: joseph, usergoal, entry: "dafghjask", motto: "us history yo")
-# UserStory.create(user: jpark, usergoal, entry: "djfnfb", motto: "3iu4qty")
-
-# Story.create(goal: fitness, userstory)
-# Story.create(goal: arts, userstory)
-# Story.create(goal: language, userstory)
 
 puts "Seeds done."

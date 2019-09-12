@@ -9,8 +9,8 @@
     <li>Category: <%= usergoal.goal.category %><br><br>
     Start Date: <%= usergoal.start_date %><br><br>
     Goal Date: <%= usergoal.goal_date %><br><br>
-    Description: <%= usergoal.description %> <%= link_to "Delete?", :user_goal, method: :delete, data: { confirm: "Really?" } %><br><br></li>
-    <% # link_to "Delete?", :user_goal, method: :delete, data: { confirm: "Really?" } %>
+    Description: <%= usergoal.description %><br><br>
+    <%= link_to "Delete?", :user_goal, method: :delete, data: { confirm: "Really?" } %><br><br></li>
 <% end %>
 
 

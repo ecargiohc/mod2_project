@@ -1,5 +1,7 @@
 <h3>All Entries</h3>
 
+<div>
+<%= link_to "Return Home", users_path %><br><br>
 <% @logs.each do |log| %>
     
     <li>
@@ -8,3 +10,4 @@
     <br><br>
     </li>
 <% end %>
+</div>

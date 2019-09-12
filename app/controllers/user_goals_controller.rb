@@ -9,25 +9,25 @@ class UserGoalsController < ApplicationController
     end
 
     def edit
-        @usergoal = UserGoal.find_by(params[:id])
-        
+        @usergoal = UserGoal.find(params[:id])
     end
 
     def show
         @usergoal = UserGoal.find_by(params[:id])
+        #@usergoal = UserGoal.find(params[:id]) sometimes this works, sometimes the other 'find_by' works :// ?!!??!! 
     end
     
     def create
-        # @usergoal = UserGoal.create(usergoal_params)
-        @usergoal = UserGoal.create( {
-            user_id: session[:user_id], start_date: params[:start_date],
-            goal_date: params[:goal_date], 
-            description: params[:description],
+        @usergoal = UserGoal.create({
+            user_id: session[:user_id], 
+            goal_id: params["user_goal"][:goal_id],
+            start_date: params["user_goal"][:start_date],
+            goal_date: params["user_goal"][:goal_date], 
+            description: params["user_goal"][:description]
         })
         # byebug
-        # @user_goal.user_id = session[:user_id]
-        # @user_goal.save
-        redirect_to user_goal_path
+        redirect_to user_goal_path(@usergoal)
+        # redirect_to user_goal_path(@usergoal.id)
     end
 
     def update
@@ -35,6 +35,15 @@ class UserGoalsController < ApplicationController
         @usergoal.update(usergoal_params)
         redirect_to user_goal_path(@usergoal)
     end
+
+    def destroy 
+        byebug
+        @usergoal = UserGoal.find(params[:id])
+        @usergoal.destroy
+        # flash[:notice] = "Goal deleted."
+        redirect_to user_goal_path #beware of plural or singular, depending on if want to view all or specific!!!
+    end
+
   
     private
   

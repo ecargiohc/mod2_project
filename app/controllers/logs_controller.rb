@@ -9,7 +9,7 @@ class LogsController < ApplicationController
     end
 
     def show
-        @log = Log.find_by(params[:id])
+        @log = Log.find(params[:id])
     end
 
     def edit
@@ -17,9 +17,18 @@ class LogsController < ApplicationController
     end
 
     def create
-        @log = Log.create(log_params)
+        @log = Log.create({
+            user_id: params["log"][:user_id],
+            user_goal_id: params["log"][:user_goal_id],
+            title: params["log"][:title],
+            date: params["log"][:date], 
+            entry: params["log"][:entry]
+        })
+        # @log = Log.new(log_params)
+        # byebug
+        # @log.save
         # redirect_to "/user_goal#{@userpath}"
-        #user_goal_path(@log)
+        redirect_to log_path(@log)
     end
 
     def update
@@ -38,6 +47,6 @@ class LogsController < ApplicationController
     private
   
     def log_params
-      params.require(:user_goal).permit(:entry, :title, :date, :user_goal)
+      params.require(:log).permit(:title, :entry, :date, :user_id, :user_goal_id)
     end
 end

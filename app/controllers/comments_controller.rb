@@ -9,7 +9,8 @@ class CommentsController < ApplicationController
     end
 
     def show
-        @comment = Comment.find_by(params[:id])
+        @comment = Comment.find(params[:id])
+        #find_by vs. find; when does one work, when does the other not?!
     end
 
     def edit

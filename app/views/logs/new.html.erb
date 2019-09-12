@@ -3,9 +3,12 @@
 <%= form_for @log do |f| %>
     <%= f.label "Title Your Log:" %>
     <%= f.text_field :title %>
-    <br>
+    <br><br>
+    <%= f.label "Date:" %>
+    <%= f.text_field :date %>
+    <br><br>
     <%= f.label "Write:" %>
     <%= f.text_field :entry %>
     <br><br>
-    <%= f.submit "Add Log"%>
-    <% end %>
+    <%= f.submit "Add Log" %>
+<% end %>

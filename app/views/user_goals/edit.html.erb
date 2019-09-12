@@ -1,11 +1,16 @@
-<h3>Edit Your Goals</h3>
-
+<h3>Edit/Update Your Goals</h3>
+<%= link_to "Return Home", users_path %>
+<br><br>
 <%= form_for @usergoal do |f| %>
     <% #f.label("Name:") %>
     <% #collection_select(:usergoal, :user_id, UserGoal.all, :id, :category) %>
     <br>
     <%= f.label("Description:") %>
     <%= f.text_field :description %>
+    <% #collection_select(:usergoal, :user_id, UserGoal.all, :id, :description) %>
+    <br>
+    <%= f.label("Start Date:") %>
+    <%= f.text_field :start_date %>
     <br>
     <%= f.label("Goal Date:") %>
     <%= f.text_field :goal_date %>

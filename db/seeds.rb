@@ -48,7 +48,7 @@ ug6 = UserGoal.create({user: jpark, goal: fitness, description: "lift heavier we
 
 a1 = Achievement.create({user_goal: ug1, report: "it was rewarding"})
 
-log1 = Log.create({user_goal: ug1, title: "blahhh", entry: "tired and excessively hungry", date: "12/09/2019"})
+log1 = Log.create({user: genevieve, user_goal: ug1, title: "blahhh", entry: "tired and excessively hungry", date: "12/09/2019"})
 
 c1 = Comment.create({user: genevieve, log: log1, title: "you can do it", entry: "why not drink more water"})
 

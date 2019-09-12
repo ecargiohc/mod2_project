@@ -1,5 +1,13 @@
 <h3>Mah Goal(s)</h3>
 
+<% #byebug %>
+<% @usergoal.user.goals.each do |goal| %>
+    <%= goal.category %>
+    <% end %>
+
+
+
+
 <h4><%= @usergoal.goal.category %>:</h4>
 <li>
 <%= @usergoal.description %>
@@ -9,6 +17,9 @@
 <label>Goal Date:</label> <%= @usergoal.goal_date %></ul>
 
 <br><br>
+<div>
+<%= link_to "Record Your Progress", new_log_path %>
+</div>
 <div>
 <%= link_to "Edit My List of Goals", edit_user_goal_path(@usergoal.goal) %>
 </div>

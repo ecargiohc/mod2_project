@@ -1,8 +1,11 @@
-<h3>Add/Create A Comment a Friend's Journey(Log)</h3>
+<h3>Add/Create A Comment Someone's Journey(Log)</h3>
 
 <%= form_for @comment do |f| %>
     <%= f.label ("Log Title:") %>
     <%= collection_select(:comment, :log_id, Log.all, :id, :title) %>
+    <br><br>
+    <%= f.label ("Title Your Comment:") %>
+    <%= f.text_field :title %>
     <br><br>
     <%= f.label ("Your Words of Wisdom:") %>
     <%= f.text_field :entry %>

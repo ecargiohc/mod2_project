@@ -1,2 +1,6 @@
-<h3>View All Comments</h3>
+<h3>View All Advice</h3>
 
+<% @comments.each do |comment| %>
+    <%= comment.log.title %>
+    <ul><%= comment.title %></ul>
+<% end %>

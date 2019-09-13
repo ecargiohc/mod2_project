@@ -1,18 +1,17 @@
-<h3>Mah Goal(s)</h3>
+<h3>Goal Deets:(s)</h3>
 
 <%= link_to "Return Home", users_path %><br><br>
 <%= link_to "Add New Goal", new_user_goal_path %><br><br>
 <%= link_to "Record Your Progress", new_log_path %><br><br>
 
-<% #@user_goal.description %>
-<% #byebug %>
-<% @all_my_usergoals.each do |usergoal| %>
+
+<% @users_goals.each do |usergoal| %>
     <li>Category: <%= usergoal.goal.category %><br><br>
-    Start Date: <%= usergoal.start_date %><br><br>
+    Start Date: <%= usergoal.start_date %><br>
     Goal Date: <%= usergoal.goal_date %><br><br>
     Description: <%= usergoal.description %><br><br>
-    <%= link_to "Delete?", :user_goal, method: :delete, data: { confirm: "Really?" } %><br><br></li>
+    <%= link_to "Delete?", :user_goal, method: :delete, data: { confirm: "throw in the towel?" } %><br><br></li>
+
 <% end %>
 
-
-<br><br>
+   

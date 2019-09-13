@@ -9,6 +9,11 @@ class UsersController < ApplicationController
         @user_logs = Log.where(user_id: @current_user)
     end
 
+    def oneusergoals
+        @users_goals = UserGoal.where(user_id: @current_user)
+        # @oneusergoals = UserGoal.where(user_id: @current_user)
+    end
+
     def new
         @user = User.new
     end

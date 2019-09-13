@@ -1,0 +1,12 @@
+<h3>All Mah Goals(s)</h3>
+
+<%= link_to "Return Home", users_path %><br><br>
+<%= link_to "Add New Goal", new_user_goal_path %><br><br>
+<%= link_to "Record Your Progress", new_log_path %><br><br>
+
+<% #@user_goal.description %>
+<% #byebug %>
+<% @users_goals.each do |usergoal| %>
+    <li>Category: "<%= link_to usergoal.goal.category, user_goal_path(usergoal)%>"<br><br>
+<% end %>
+

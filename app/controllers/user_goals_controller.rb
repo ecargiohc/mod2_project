@@ -15,8 +15,9 @@ class UserGoalsController < ApplicationController
     def show
         @usergoal = UserGoal.find_by(params[:id])
         #byebug
+        # @user_logs = Log.where(user_id: @current_user)
         # @all_users_goals = UserGoal.find_each
-        @all_my_usergoals = UserGoal.where(user_id: params[:id])
+        @users_goals = UserGoal.where(user_id: @current_user)
         #@usergoal = UserGoal.find(params[:id]) sometimes this works, sometimes the other 'find_by' works :// ?!!??!! 
     end
     
@@ -28,22 +29,32 @@ class UserGoalsController < ApplicationController
             goal_date: params["user_goal"][:goal_date], 
             description: params["user_goal"][:description]
         )
-        redirect_to user_goal_path(@usergoal)
-        # redirect_to user_goal_path(@usergoal.id)
+        # byebug
+
+        # redirect_to user_goal_path(@usergoal)
+        redirect_to oneusergoals_path(@usergoal)
     end
 
     def update
         @usergoal = UserGoal.find(params[:id])
         @usergoal.update(usergoal_params)
-        redirect_to user_goal_path(@usergoal)
+        if @usergoal.save
+            redirect_to usergoal_path
+        else
+            render :update
+        end
+        # @usergoal = UserGoal.find(params[:id])
+        # @usergoal.update(usergoal_params)
+        # redirect_to user_goal_path(@usergoal)
     end
 
     def destroy 
-        # byebug
-        @usergoal = UserGoal.find_by(user_id: params[:id])
+        byebug
+        @usergoal = UserGoal.find_by(params[:id])
+        # @usergoal = UserGoal.find_by(user_id: params[:id])
         @usergoal.destroy
         # flash[:notice] = "Goal deleted."
-        redirect_to user_goal_path #beware of plural or singular, depending on if want to view all or specific!!!
+        redirect_to user_goal_path(@usergoal) #beware of plural or singular, depending on if want to view all or specific!!!
     end
 
   

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   root "logins#new"
   
   get '/users/:id/userlogs', to: "users#userlogs", as: "/userlogs"
+  get '/users/:id/oneusergoals', to: "users#oneusergoals", as: "/oneusergoals"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   get '/signin', to: "logins#new"

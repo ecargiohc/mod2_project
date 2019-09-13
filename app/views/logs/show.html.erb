@@ -5,6 +5,7 @@
 <%= link_to "Add Log", new_log_path %>
 <br><br>
 <% @user_logs.each do |log| %>
+
     <li>On: <%= log.date %><br><br>
     Title: "<%= log.title %>"<br><br>
     Description: <%= log.entry %><br><br>

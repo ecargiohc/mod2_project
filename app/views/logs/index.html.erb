@@ -6,7 +6,7 @@
     
     <li>
 
-    <%= link_to log.title, log_path(log) %>  
+   <%= link_to "#{log.user.name}'s", log_path(log) %>
     <br><br>
     </li>
 <% end %>

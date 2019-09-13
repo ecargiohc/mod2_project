@@ -1,6 +1,12 @@
 class UsersController < ApplicationController
     
     def index
+        @users = User.all
+    end
+    
+    def userlogs
+        @logs = Log.where(user_id: @current_user)
+        @user_logs = Log.where(user_id: @current_user)
     end
 
     def new

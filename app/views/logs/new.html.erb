@@ -13,7 +13,7 @@
     <%= f.text_area :entry %>
     <br><br>
     <%= f.label "choose a motto:" %>
-    <%= collection_select(:log, :motto_id, Motto.all, :id, :phrase, prompt: true) %>
+    <%= collection_select(:log, :motto_id, Motto.all, :id, :phrase) %>
     <br><br>
     <%= f.submit "Add Log" %>
 <% end %>

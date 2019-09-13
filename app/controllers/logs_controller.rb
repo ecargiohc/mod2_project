@@ -10,12 +10,15 @@ class LogsController < ApplicationController
     end
 
     def show
-        @user_logs = Log.find_each
         @log = Log.find_by(params[:id])
+        # @user_logs = Log.where(id: params[:id])
+        @user_logs = Log.where(user_id: @current_user)
+        # @log = Log.find_by(params[:id])
     end
 
     def edit
-        @log = Log.find_by(params[:id])
+        @log = Log.find(params[:id])
+        #find_by?
     end
 
     def create
@@ -32,13 +35,17 @@ class LogsController < ApplicationController
         # @log.save
         # redirect_to "/user_goal#{@userpath}"
         # byebug
-        redirect_to logs_path(@log)
+        redirect_to log_path(@log)
     end
 
     def update
         @log = Log.find(params[:id])
         @log.update(log_params)
-        redirect_to log_path(@log)
+        if @log.save
+            redirect_to log_path
+        else
+            render :update
+        end
     end
 
     def destroy 

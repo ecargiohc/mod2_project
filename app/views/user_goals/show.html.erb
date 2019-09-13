@@ -4,6 +4,7 @@
 <%= link_to "Add New Goal", new_user_goal_path %><br><br>
 <%= link_to "Record Your Progress", new_log_path %><br><br>
 
+<% #@user_goal.description %>
 <% #byebug %>
 <% @all_my_usergoals.each do |usergoal| %>
     <li>Category: <%= usergoal.goal.category %><br><br>

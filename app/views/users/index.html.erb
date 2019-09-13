@@ -24,9 +24,10 @@ Record your progress:
 <%= link_to "log", new_log_path %>
 
 <h4>
-Read journey on others' progress:
+My logs
 </h4>
-<%= link_to "logs", logs_path %>
+<% mylog= Log.find_by(user_id:@current_user.id) %>
+<%= link_to "logs", userlogs_path(@current_user.id) %>
 
 <h4>
 See your friends' goals:

@@ -5,12 +5,12 @@
     <%= f.text_field :title %>
     <br>
     <%= f.label :entry %>
-    <%= f.text_field :entry %>
-    <br><br>
-    <%= f.submit "save update"%>
+    <%= f.text_area :entry %>
     <br><br>
     <%= f.label "choose a motto:" %>
     <%= collection_select(:log, :motto_id, Motto.all, :id, :phrase, prompt: true) %>
+    <br><br>
+    <%= f.submit "save update"%>
     <br><br>
     <%= link_to "delete log?", @log, method: :delete, data: { confirm: "delete?" } %>
     <% end %>

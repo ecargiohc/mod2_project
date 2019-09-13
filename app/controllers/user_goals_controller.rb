@@ -13,6 +13,7 @@ class UserGoalsController < ApplicationController
     end
 
     def show
+        @usergoal = UserGoal.find_by(params[:id])
         #byebug
         # @all_users_goals = UserGoal.find_each
         @all_my_usergoals = UserGoal.where(user_id: params[:id])

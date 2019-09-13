@@ -55,7 +55,7 @@ ug6 = UserGoal.create({user: jpark, goal: fitness, description: "lift heavier we
 # m2 = Motto.create({phrase: "phrase2"})
 # m3 = Motto.create({phrase: "phrase3"})
 
-30.times do
+50.times do
     motto = Motto.create({
       phrase: Faker::Quote.yoda
     })

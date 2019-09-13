@@ -14,7 +14,6 @@ class UserGoalsController < ApplicationController
 
     def show
         @usergoal = UserGoal.find_by(params[:id])
-        #byebug
         # @user_logs = Log.where(user_id: @current_user)
         # @all_users_goals = UserGoal.find_each
         @users_goals = UserGoal.where(user_id: @current_user)
@@ -54,9 +53,11 @@ class UserGoalsController < ApplicationController
         # @usergoal = UserGoal.find_by(user_id: params[:id])
         @usergoal.destroy
         # flash[:notice] = "Goal deleted."
-        redirect_to users_path #beware of plural or singular, depending on if want to view all or specific!!!
+        redirect_to oneusergoals_path
+        # redirect_to users_new
+        # redirect_to user_goal_path
+        # redirect_to users_path #beware of plural or singular, depending on if want to view all or specific!!!
     end
-
   
     private
   

@@ -49,12 +49,12 @@ class UserGoalsController < ApplicationController
     end
 
     def destroy 
-        byebug
+        # byebug
         @usergoal = UserGoal.find_by(params[:id])
         # @usergoal = UserGoal.find_by(user_id: params[:id])
         @usergoal.destroy
         # flash[:notice] = "Goal deleted."
-        redirect_to user_goal_path(@usergoal) #beware of plural or singular, depending on if want to view all or specific!!!
+        redirect_to users_path #beware of plural or singular, depending on if want to view all or specific!!!
     end
 
   
